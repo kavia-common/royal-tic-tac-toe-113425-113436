@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_theme_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="32dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Royal Tic Tac Toe"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/md_theme_primary"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="How to Play:\n\n- Two players take turns marking a 3×3 board.\n- Kings (♔) are X. Queens (♛) are O.\n- First to line up 3 of their icons wins!\n- Tap the player icon to switch King or Queen.\n- Press Restart to play again, scores remain.\n\n"
+            android:textSize="18sp"
+            android:textColor="@color/md_theme_onBackground"
+            android:paddingBottom="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Colors &amp; Icons:\n- ♔ (King) moves: Gold accent\n- ♛ (Queen) moves: Purple accent\n- Scores tracked at the top.\n- All on your device (no network needed!)"
+            android:textSize="16sp"
+            android:textColor="@color/md_theme_secondary"
+            android:paddingBottom="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enjoy a playful duel fit for royalty!"
+            android:textSize="16sp"
+            android:textColor="@color/md_theme_accent"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+</ScrollView>

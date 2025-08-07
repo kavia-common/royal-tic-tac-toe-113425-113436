@@ -3,16 +3,129 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/md_theme_background">
 
+    <!-- Score Panel -->
     <TextView
+        android:id="@+id/score_panel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="♔ 0    ♛ 0    Draws 0"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:paddingTop="36dp"
+        android:paddingBottom="16dp"
+        android:gravity="center"
+        android:textColor="@color/md_theme_onBackground"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        />
+
+    <!-- Turn Indicator -->
+    <TextView
+        android:id="@+id/turn_indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello Kotlin World!"
+        android:text="♔ King's turn"
         android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp"
+        android:gravity="center"
+        android:textColor="@color/md_theme_secondary"
+        app:layout_constraintTop_toBottomOf="@id/score_panel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <!-- Game Board 3x3 Grid -->
+    <GridLayout
+        android:id="@+id/grid_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="24dp"
+        android:padding="4dp"
+        android:rowCount="3"
+        android:columnCount="3"
+        app:layout_constraintTop_toBottomOf="@id/turn_indicator"
+        app:layout_constraintBottom_toTopOf="@id/button_row"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.47"
+        app:layout_constraintWidth_percent="0.95"
+        >
+
+        <Button android:id="@+id/cell00"
+            style="@style/GameCell" />
+        <Button android:id="@+id/cell01"
+            style="@style/GameCell" />
+        <Button android:id="@+id/cell02"
+            style="@style/GameCell" />
+
+        <Button android:id="@+id/cell10"
+            style="@style/GameCell" />
+        <Button android:id="@+id/cell11"
+            style="@style/GameCell" />
+        <Button android:id="@+id/cell12"
+            style="@style/GameCell" />
+
+        <Button android:id="@+id/cell20"
+            style="@style/GameCell" />
+        <Button android:id="@+id/cell21"
+            style="@style/GameCell" />
+        <Button android:id="@+id/cell22"
+            style="@style/GameCell" />
+    </GridLayout>
+
+    <!-- Action Buttons Row -->
+    <LinearLayout
+        android:id="@+id/button_row"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        >
+
+        <Button
+            android:id="@+id/button_restart"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="Restart"
+            android:textSize="16sp"
+            android:textColor="@color/md_theme_primary"
+            android:backgroundTint="@color/md_theme_secondaryContainer"
+            android:layout_marginEnd="11dp"
+            />
+
+        <Button
+            android:id="@+id/button_player"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="Player"
+            android:textSize="16sp"
+            android:textColor="@color/md_theme_onPrimary"
+            android:backgroundTint="@color/md_theme_primary"
+            android:layout_marginEnd="11dp"
+            />
+
+        <Button
+            android:id="@+id/button_help"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="Help"
+            android:textSize="16sp"
+            android:textColor="@color/md_theme_accent"
+            android:backgroundTint="@color/md_theme_primaryContainer"
+            />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
